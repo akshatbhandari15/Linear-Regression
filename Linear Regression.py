@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Spyder Editor
-
-This is a temporary script file.
-"""
 import pandas as pd
 import numpy as nm
 
@@ -72,16 +67,17 @@ feature_set = feature_set.to_numpy()
 
 print (car_prices)
 print (feature_set)
-#Hypothesis
+#Hypothesis Function
 def hyp(theta):
     h= nm.dot(feature_set, theta)
     return h
+#Cost Function
 def cost(m, theta):
     j = car_prices- hyp(theta)
     j = nm.square(j)
     j = j/(2*m)
     return j
-
+#Function for calling Gradient Descent
 def gradDescent(theta, alpha, m):
     print (cost(m, theta))
     term = car_prices- hyp(theta)
